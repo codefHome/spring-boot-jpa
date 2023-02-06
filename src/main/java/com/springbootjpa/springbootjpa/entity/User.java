@@ -21,7 +21,7 @@ import jakarta.persistence.Table;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_Id", nullable = false)
+    @Column(name="user_id", nullable = false)
     private Long userId;
     @Basic
     @Column(name ="email",nullable = false, length = 45, unique = true)
@@ -31,8 +31,8 @@ public class User {
     private String password;
 
     @ManyToAny(fetch = FetchType.EAGER)
-    @JoinTable(name="user_role", joinColumns = {@JoinColumn(name="user_Id")},
-    inverseJoinColumns = {@JoinColumn(name="role_Id")})
+    @JoinTable(name="user_role", joinColumns = {@JoinColumn(name="user_id")},
+    inverseJoinColumns = {@JoinColumn(name="role_id")})
     private Set<Role> roles= new HashSet<>();
 
     @OneToOne(mappedBy = "user")
@@ -134,7 +134,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [userId=" + userId + ", email=" + email + ", password=" + password + "]";
+        return "User [userId=" + userId + ", email=" + email +  "]";
     }
     
 }

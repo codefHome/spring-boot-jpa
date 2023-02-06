@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 public class Instructor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="instructor_Id", nullable = false)
+    @Column(name="instructor_id", nullable = false)
     private Long instructorId;
     @Basic
     @Column(name="first_name",nullable=false, length=45)
@@ -34,7 +34,7 @@ public class Instructor {
 @OneToMany(mappedBy = "instructor", fetch=FetchType.LAZY)
 private Set<Course> courses =new HashSet<>();
 @OneToOne(cascade = CascadeType.REMOVE)
-@JoinColumn(name="user_Id", referencedColumnName = "user_Id", nullable = false)
+@JoinColumn(name="user_id", referencedColumnName = "user_id", nullable = false)
 private User user;
 
 

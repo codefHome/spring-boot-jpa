@@ -38,7 +38,7 @@ public class Course {
 
     @ManyToMany(fetch= FetchType.LAZY)
     @JoinTable(name="enrolled_in", joinColumns = {@JoinColumn(name="course_id")},
-    inverseJoinColumns = {@JoinColumn(name="student_Id")})
+    inverseJoinColumns = {@JoinColumn(name="student_id")})
     private Set<Student> students =new HashSet<>();
 
 

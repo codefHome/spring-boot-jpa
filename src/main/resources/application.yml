@@ -1,0 +1,19 @@
+server:
+  port: 5000
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springboot
+    username: postgres
+    password: 1Bedada@Home
+  jpa: 
+    hibernate:
+      ddl-auto: create-drop
+    properties: 
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        formate_sql: true
+        enable_lazy_load_no_trans: true
+    show-sql: true  
+
+  main:
+    web-application-type: servlet
