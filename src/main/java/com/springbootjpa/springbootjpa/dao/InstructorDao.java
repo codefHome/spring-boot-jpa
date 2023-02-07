@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import com.springbootjpa.springbootjpa.entity.Instructor;
 
 public interface InstructorDao extends JpaRepository<Instructor,Long>{
-    @Query(value="select i from Instructor as i where i.firstName like $:name% or i.lastName like $:name%")
+    @Query(value="select i from Instructor as i where i.firstName like %:name% or i.lastName like %:name%")
     List<Instructor> findInstructorsByName(@Param("name") String name);
 
     @Query(value="select i from Instructor as i where i.user.email=:email")
